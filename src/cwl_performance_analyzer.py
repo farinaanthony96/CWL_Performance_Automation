@@ -386,19 +386,19 @@ def create_data_headers(cwl_analysis: CWLAnalysis) -> list[str]:
         if round_war.state == "preparation":
             headers.append(f"War {round_index + 1} Performance\n"
                            f"00* 00.00%   |   00* 00.00%\n"
-                           f"0/{round_war.teamSize}        |        0/{round_war.teamSize}")
+                           f"0/{round_war.teamSize}                 0/{round_war.teamSize}")
             rounds_remaining -= 1
             break
         
         headers.append(f"War {round_index + 1} Performance\n{round_war.clan.stars}* {round(round_war.clan.destructionPercentage, 2)}%"
                        f"   |   {round_war.opponent.stars}* {round(round_war.opponent.destructionPercentage, 2)}%\n"
-                       f"{round_war.clan.attacks}/{round_war.teamSize}        |        {round_war.opponent.attacks}/{round_war.teamSize}")
+                       f"{round_war.clan.attacks}/{round_war.teamSize}                 {round_war.opponent.attacks}/{round_war.teamSize}")
         rounds_remaining -= 1
     
     for round_index in range(len(cwl_analysis.available_wars), len(cwl_analysis.available_wars) + rounds_remaining):
         headers.append(f"War {round_index + 1} Performance\n"
                        f"00* 00.00%   |   00* 00.00%\n"
-                       f"0/{round_war.teamSize}        |        0/{round_war.teamSize}")
+                       f"0/{round_war.teamSize}                 0/{round_war.teamSize}")
         
         
     headers.append("Attacks Used")
