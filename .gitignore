@@ -138,4 +138,3 @@ dmypy.json
 cwl_data/
 example_responses/
 other_clan_tags.txt
-src/capital_raid_analyzer.py
